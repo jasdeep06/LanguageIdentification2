@@ -2,6 +2,7 @@ from flask import Flask,render_template,request
 from flask_uploads import UploadSet,configure_uploads,AUDIO
 from sklearn.externals import joblib
 from feature_extractor import process_test_file
+import os
 
 app=Flask(__name__)
 
@@ -24,4 +25,11 @@ def upload():
 
     return render_template('upload.html')
 
+
+if __name__ == '__main__':
+    port = int(os.getenv('PORT', 5000))
+
+    print("Starting app on port %d" % port)
+
+    app.run(debug=False, port=port, host='0.0.0.0')
 
