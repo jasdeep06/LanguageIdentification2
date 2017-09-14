@@ -1,0 +1,12 @@
+<html>
+<head>
+    <title>Upload</title>
+</head>
+<body>
+<p>PLEASE UPLOAD AUDIO in .wav format.Note that training is done on 10 second sentences.</p>
+<form method=POST enctype=multipart/form-data action="{{url_for('upload')}}">
+    <input type=file name=sound>
+    <input type="submit">
+</form>
+</body>
+</html>
